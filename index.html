@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mango3D – Peças sensoriais e colecionáveis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap">
+<style>
+:root{--or:#FF6A13;--or-d:#C2410C;--ye:#FFB81C;--te:#1A9E99;--pu:#6D35D6;--ink:#141414;--mut:#555;--bg:#FFFBF6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+a{color:var(--or-d)}a:hover{color:#9a3412}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:relative;overflow:hidden;background:#fff;padding:36px 0 30px;border-bottom:1px solid #f1e6da}
+header .c1,header .c2{position:absolute;top:0;width:180px;height:110px}
+header .c1{left:0;background:var(--or);clip-path:polygon(0 0,100% 0,0 100%)}
+header .c2{right:0;background:var(--ye);clip-path:polygon(0 0,100% 0,100% 100%)}
+.brand{position:relative;display:flex;align-items:center;justify-content:center;gap:10px}
+.brand img{width:64px;height:auto}
+.brand span{font-size:clamp(40px,8vw,60px);font-weight:800;letter-spacing:-.02em;line-height:1}
+.brand b{color:var(--or)}
+.tag{position:relative;text-align:center;font-size:clamp(17px,3.6vw,21px);margin:10px 0 0}
+.tag strong{font-weight:700}.tag em{font-style:normal;font-weight:800;color:var(--or-d)}
+.kit{display:flex;justify-content:center;margin-top:18px}
+.kit div{display:flex;align-items:center;gap:10px;background:var(--or);color:#fff;border-radius:999px;padding:8px 10px 8px 20px;font-weight:800;letter-spacing:.04em}
+.kit i{font-style:normal;display:flex;gap:6px}
+.kit i span{width:34px;height:34px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:800}
+h2{font-size:clamp(22px,4.5vw,30px);margin:0 0 6px;text-wrap:balance}
+.lead{color:var(--mut);margin:0 0 22px}
+section{padding:40px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 1px 0 #eadfd3,0 8px 24px rgba(80,40,0,.06);display:flex;flex-direction:column}
+.ph{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#fff 0,#f3efea 70%)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.cut img{width:84%;height:84%;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(60,30,10,.18))}
+.card .tx{padding:14px 16px 18px}
+.card h3{margin:0;font-size:17px}
+.card p{margin:4px 0 0;font-size:13.5px;color:var(--mut)}
+.chip{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px;background:#FFF1E6;color:var(--or-d)}
+.ben{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.ben div{background:#fff;border-radius:18px;padding:18px;text-align:center;box-shadow:0 1px 0 #eadfd3}
+.ben svg{width:44px;height:44px}
+.ben h3{font-size:15px;margin:8px 0 0}
+.slogan{font-family:Caveat,cursive;font-size:clamp(30px,6vw,40px);color:var(--or-d);text-align:center;transform:rotate(-3deg);margin:8px 0 0}
+.care{display:flex;flex-wrap:wrap;gap:14px}
+.care div{flex:1 1 260px;display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:18px;padding:16px;box-shadow:0 1px 0 #eadfd3}
+.care p{margin:0;font-size:14px}
+.cta{background:linear-gradient(0deg,#fff,#fff);border-radius:24px;padding:26px;text-align:center;box-shadow:0 1px 0 #eadfd3}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--pu);color:#fff;text-decoration:none;font-weight:700;margin-top:12px}
+.btn:hover{background:#5523b3;color:#fff}
+.feat{background:#fff;border-radius:26px;box-shadow:0 1px 0 #eadfd3,0 10px 30px rgba(80,40,0,.07);padding:26px;margin-bottom:26px}
+.feat-top{display:flex;flex-wrap:wrap;gap:26px;align-items:center}
+.feat-top .hero{flex:1 1 280px;max-width:420px;margin:0 auto}
+.feat-top .hero img{width:100%;display:block;filter:drop-shadow(0 14px 18px rgba(120,50,0,.22))}
+.feat-top .txt{flex:999 1 340px;min-width:0}
+.feat .eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--or-d)}
+.feat h3{font-size:clamp(24px,4.6vw,32px);margin:4px 0 10px;line-height:1.15}
+.feat p{margin:0 0 10px;color:#333;font-size:15px}
+.ind{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.ind li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+.ind li::before{content:"";flex:none;width:10px;height:10px;margin-top:7px;border-radius:50%;background:var(--or)}
+.formas{margin-top:26px}
+.formas h4{font-size:18px;margin:0 0 4px}
+.formas .sub{margin:0 0 14px;color:var(--mut);font-size:14px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.fgrid figure{margin:0;background:#fff;border:1.5px solid #F3E6DA;border-radius:16px;padding:12px 10px 10px;text-align:center}
+.fgrid img{width:100%;height:110px;object-fit:contain;display:block}
+.fgrid figcaption{font-size:13px;font-weight:700;margin-top:6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pills span{font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px;background:#F3EEFF;color:var(--pu)}
+.feat-top .hero{flex:1 1 280px;max-width:420px;margin:0 auto;border-radius:20px;overflow:hidden;background:#fff}
+.feat-top .hero img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:none}
+.feat-top .hero.cut img{object-fit:contain;padding:10px;filter:drop-shadow(0 14px 18px rgba(120,50,0,.22))}
+.fgrid img{width:100%;height:120px;object-fit:contain;display:block}
+.toc{display:flex;gap:8px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none}
+.toc a{flex:none;font-size:13px;font-weight:700;text-decoration:none;padding:8px 14px;border-radius:999px;background:#fff;color:var(--ink);box-shadow:0 1px 0 #eadfd3;min-height:40px;display:flex;align-items:center}
+.toc a:hover{color:var(--or-d)}
+.feat-top{flex-direction:column;align-items:stretch}
+.feat-top .hero{flex:none;width:100%;max-width:520px;margin:0 auto;background:#fff;border:1.5px solid #F3E6DA}
+.feat-top .hero img{aspect-ratio:1/1;object-fit:contain;background:#fff}
+.feat-top .txt{flex:none}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trio figure{margin:0;background:#fff;border:1.5px solid #F3E6DA;border-radius:16px;padding:8px;text-align:center}
+.trio img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block}
+.trio figcaption{font-size:12.5px;font-weight:700;margin-top:4px}
+.warn{display:flex;gap:14px;align-items:center;background:#FFF1EE;border:2px solid #D93A2B;border-radius:18px;padding:16px 18px;margin-bottom:16px}
+.warn strong{color:#B42318;font-size:15px}.warn p{margin:4px 0 0;font-size:14px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.cgrid>div{background:#fff;border-radius:18px;padding:16px 18px;box-shadow:0 1px 0 #eadfd3}
+.cgrid h3{font-size:16px;margin:0 0 6px}
+.cgrid ul{margin:0;padding-left:18px}.cgrid li{font-size:14px;margin:4px 0}
+.disc{font-size:12.5px;color:#555;margin:12px 0 0;font-style:italic}
+.faq{display:grid;gap:10px}
+.faq details{background:#fff;border-radius:16px;box-shadow:0 1px 0 #eadfd3;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;min-height:52px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;font-weight:700;font-size:15px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:50%;background:#FFF1E6;color:var(--or-d);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{color:var(--or-d)}
+.faq ul{margin:0;padding:0 22px 16px 36px}.faq li{font-size:14px;margin:6px 0}
+footer{padding:26px 0 40px;font-size:12.5px;color:var(--mut);text-align:center}
+.lines{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:14px}
+.lines span{font-size:12px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:999px;border:1.5px solid currentColor}
+</style>
+</head>
+<body>
+<header>
+<div class="c1" aria-hidden="true"></div><div class="c2" aria-hidden="true"></div>
+<div class="wrap">
+<div class="brand"><img src="img/manga.png" alt=""><span>Mango<b>3D</b></span></div>
+<p class="tag">Criatividade que <strong>ganha forma,</strong><br><em>camada por camada.</em></p>
+<div class="kit"><div>KIT SENSORIAL <i><span>P</span><span>M</span><span>G</span></i></div></div>
+<div class="lines">
+<span style="color:var(--or-d)">DECORAÇÃO</span><span style="color:#B45309">PRESENTES</span><span style="color:var(--te)">SENSORIAL</span><span style="color:var(--pu)">UTILIDADES</span><span style="color:#C62828">COLECIONÁVEIS</span>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<nav class="toc" aria-label="Produtos"><a href="#origami">Origami Sensorial Articulado</a><a href="#estrela">Estrela Cinética</a><a href="#cubo">Cubo Infinito</a><a href="#dragao-alado">Dragão Alado Articulado</a><a href="#dragao-cristal">Dragão de Cristal Articulado</a><a href="#esqueletos">Esqueletos Articulados</a><a href="#antiestresse">Espiral e Esfera Antiestresse</a><a href="#cuidados" style="color:#B42318">Avisos de segurança</a></nav>
+<section id="produtos">
+<h2>Conheça nossas peças</h2>
+<p class="lead">Peças impressas em 3D na nossa farm, uma a uma. Gire, dobre, encaixe e relaxe.</p>
+<article class="feat" id="origami">
+<div class="feat-top"><div class="hero"><img src="img/p/origami.jpg" alt="Origami Sensorial Articulado"></div>
+<div class="txt"><div class="eyebrow">KIT SENSORIAL</div><h3>Origami Sensorial Articulado</h3><p>Um origami sensorial articulado impresso em 3D, desenvolvido para estimular o foco mental, auxiliar na regulação sensorial e proporcionar alívio em momentos de ansiedade ou sobrecarga emocional.</p><p>Seu design geométrico modular permite dobrar, girar e transformar a peça em dezenas de formas diferentes, criando uma experiência dinâmica, tátil e visual envolvente.</p><p>O movimento repetitivo e previsível das dobradiças ajuda a direcionar a atenção, promovendo sensação de calma e organização mental.</p><div class="pills"><span>Foco</span><span>Calma</span><span>Regulação sensorial</span><span>Tátil e visual</span></div></div></div>
+<div class="formas"><h4>Formas que você pode montar</h4><p class="sub">Dobre e gire as dobradiças: a mesma peça vira dezenas de formatos. Alguns exemplos:</p><div class="fgrid"><figure><img src="img/formas/piramide.png" alt="Pirâmide"><figcaption>Pirâmide</figcaption></figure><figure><img src="img/formas/estrela.png" alt="Estrela"><figcaption>Estrela</figcaption></figure><figure><img src="img/formas/anel.png" alt="Anel"><figcaption>Anel</figcaption></figure><figure><img src="img/formas/cubo.png" alt="Cubo"><figcaption>Cubo</figcaption></figure><figure><img src="img/formas/coroa.png" alt="Coroa"><figcaption>Coroa</figcaption></figure><figure><img src="img/formas/borboleta.png" alt="Borboleta"><figcaption>Borboleta</figcaption></figure><figure><img src="img/formas/mini-piramide.png" alt="Torre"><figcaption>Torre</figcaption></figure></div></div><div class="formas"><h4>Indicado para</h4><ul class="ind"><li>Pessoas no espectro autista (TEA) que buscam estímulos estruturados</li><li>Auxílio na redução de ansiedade e estresse</li><li>Foco e concentração em ambiente escolar ou profissional</li><li>Autorregulação sensorial por meio da manipulação manual</li><li>Adultos e crianças que gostam de objetos fidget e geométricos</li></ul><p class="disc">Este produto não é um dispositivo médico e não substitui avaliação, tratamento ou acompanhamento de profissionais de saúde.</p></div></article>
+<article class="feat" id="estrela">
+<div class="feat-top"><div class="hero"><img src="img/p/estrela-cinetica.jpg" alt="Estrela Cinética"></div>
+<div class="txt"><div class="eyebrow">KIT SENSORIAL</div><h3>Estrela Cinética</h3><p>Movimento cinético surpreendente: puxe a haste e a estrela sai da posição inicial e se transforma numa pirâmide de camadas em 3D.</p><p>As camadas giram e deslizam umas sobre as outras, criando um efeito visual hipnotizante que prende a atenção.</p><div class="pills"><span>Movimento cinético</span><span>Visual</span><span>Foco</span><span>Decoração</span></div></div></div>
+<div class="formas"><h4>Benefícios</h4><ul class="ind"><li>Da posição inicial à transformação 3D em um gesto</li><li>Estimula o foco e a atenção</li><li>Ajuda a aliviar o estresse</li><li>Fica linda como peça de decoração</li></ul></div></article>
+<article class="feat" id="cubo">
+<div class="feat-top"><div class="hero"><img src="img/p/cubo-infinito.jpg" alt="Cubo Infinito"></div>
+<div class="txt"><div class="eyebrow">KIT SENSORIAL</div><h3>Cubo Infinito</h3><p>O clássico cubo que abre e fecha sem parar. Os blocos articulados giram em sequência, num movimento contínuo que nunca termina.</p><div class="pills"><span>Movimentos infinitos</span><span>Educativo</span><span>Portátil</span></div></div></div>
+<div class="formas"><h4>Benefícios</h4><ul class="ind"><li>Coordenação motora</li><li>Estimula a criatividade</li><li>Movimentos infinitos</li><li>Estimula o raciocínio e a coordenação</li></ul></div></article>
+<article class="feat" id="dragao-alado">
+<div class="feat-top"><div class="hero"><img src="img/p/dragao-alado.jpg" alt="Dragão Alado Articulado"></div>
+<div class="txt"><div class="eyebrow">COLECIONÁVEL</div><h3>Dragão Alado Articulado</h3><p>Dragão com asas, cauda e patas articuladas, impresso em 3D com filamento de efeito metálico. Cada parte se mexe e muda de posição.</p><div class="pills"><span>Articulado</span><span>Colecionável</span><span>Decoração</span></div></div></div>
+<div class="formas"><h4>Benefícios</h4><ul class="ind"><li>Asas, cauda e patas articuladas</li><li>Acabamento com efeito metálico</li><li>Ótimo para decorar e colecionar</li><li>Ideal para presentear</li></ul></div></article>
+<article class="feat" id="dragao-cristal">
+<div class="feat-top"><div class="hero"><img src="img/p/dragao-cristal.jpg" alt="Dragão de Cristal Articulado"></div>
+<div class="txt"><div class="eyebrow">COLECIONÁVEL</div><h3>Dragão de Cristal Articulado</h3><p>Corpo longo e flexível com escamas em formato de cristal. Ele se enrola, ondula e se movimenta como um dragão de verdade.</p><div class="pills"><span>Articulado</span><span>Decoração</span><span>Presente</span></div></div></div>
+<div class="formas"><h4>Benefícios</h4><ul class="ind"><li>Corpo longo que se enrola e ondula</li><li>Escamas em formato de cristal</li><li>Decora quarto, estante e escritório</li><li>Ideal para presentear</li></ul></div></article>
+<article class="feat" id="esqueletos">
+<div class="feat-top"><div class="trio">
+<figure><img src="img/p/estegossauro.jpg" alt="Esqueleto de estegossauro articulado"><figcaption>Estegossauro</figcaption></figure>
+<figure><img src="img/p/mamute.jpg" alt="Esqueleto de mamute articulado"><figcaption>Mamute</figcaption></figure>
+<figure><img src="img/p/espinossauro.jpg" alt="Esqueleto de espinossauro articulado"><figcaption>Espinossauro</figcaption></figure>
+</div>
+<div class="txt"><div class="eyebrow">COLECIONÁVEL</div><h3>Esqueletos Articulados</h3><p>Esqueletos de estegossauro, mamute e espinossauro impressos em 3D, com coluna, patas e cauda articuladas. Cada peça se mexe e muda de pose, como um fóssil de museu em miniatura.</p><div class="pills"><span>Articulado</span><span>Colecionável</span><span>Decoração</span></div></div></div>
+<div class="formas"><h4>Benefícios</h4><ul class="ind"><li>Coluna, patas e cauda articuladas</li><li>Detalhes de esqueleto fóssil</li><li>Ótimo para decorar e colecionar</li><li>Ideal para presentear quem ama dinossauros e animais pré-históricos</li></ul></div></article>
+<article class="feat" id="antiestresse">
+<div class="feat-top"><div class="hero"><img src="img/p/espiral-esfera.jpg" alt="Espiral e Esfera Antiestresse"></div>
+<div class="txt"><div class="eyebrow">KIT SENSORIAL</div><h3>Espiral e Esfera Antiestresse</h3><p>O antiestresse é um objeto sensorial que ajuda a aliviar a tensão, o estresse e a ansiedade do dia a dia. Seu movimento suave e contínuo promove uma sensação de calma, foco e bem-estar.</p><p>Produzido em PA (Poliamida), um material de alta resistência, durável e leve, ideal para o uso diário.</p><div class="pills"><span>Calma</span><span>Foco</span><span>Bem-estar</span><span>Material resistente</span></div></div></div>
+<div class="formas"><h4>Como ajuda</h4><ul class="ind"><li>TDAH: auxilia no foco e na concentração, reduzindo distrações</li><li>O movimento repetitivo ajuda a canalizar a energia de forma positiva</li><li>Ansiedade: reduz a tensão e promove relaxamento</li><li>O movimento suave ajuda a equilibrar a respiração e acalmar a mente</li><li>Dica: use sempre que sentir necessidade de se acalmar ou se concentrar</li></ul><p class="disc">Este produto não é um dispositivo médico e não substitui avaliação, tratamento ou acompanhamento de profissionais de saúde.</p></div></article>
+
+<p class="slogan">Transforme o dia com mais criatividade!</p>
+</section>
+<section id="cuidados">
+<h2>Avisos e cuidados de segurança</h2>
+<p class="lead">Leia antes de usar e guarde estas informações.</p>
+<div class="warn">
+<svg width="56" height="56" viewBox="0 0 58 58" role="img" aria-label="Não recomendado para menores de 3 anos" style="flex:none"><circle cx="29" cy="29" r="25" fill="#fff" stroke="#D93A2B" stroke-width="5"/><text x="29" y="36" text-anchor="middle" font-family="Poppins" font-size="17" font-weight="800" fill="#111">0-3</text><line x1="11" y1="11" x2="47" y2="47" stroke="#D93A2B" stroke-width="5"/></svg>
+<div><strong>ATENÇÃO: NÃO RECOMENDADO PARA MENORES DE 3 ANOS.</strong><p>Contém peças pequenas que podem se soltar e ser engolidas ou aspiradas, com risco de asfixia.</p></div>
+</div>
+<div class="faq"><details><summary>Criança pode usar sozinha?</summary><ul>
+<li>Uso por crianças somente com a supervisão de um adulto.</li>
+<li>Mantenha fora do alcance de bebês, crianças pequenas e animais de estimação.</li>
+<li>Os itens colecionáveis são peças decorativas e não se destinam a brincadeiras de crianças pequenas.</li>
+</ul></details><details><summary>Pode colocar na boca ou perto do rosto?</summary><ul>
+<li>Não colocar na boca, não morder e não chupar. Não é mordedor.</li>
+<li>Mantenha longe dos olhos, do nariz e dos ouvidos.</li>
+<li>Não arremessar. Hastes e pontas podem machucar se usadas de forma inadequada.</li>
+</ul></details><details><summary>As articulações podem machucar?</summary><ul>
+<li>As dobradiças e encaixes podem prender a pele ou os dedos: manuseie com calma.</li>
+<li>Não force as articulações além do limite nem tente desmontar a peça.</li>
+<li>Não puxe com força as partes que giram ou deslizam.</li>
+</ul></details><details><summary>O que fazer se a peça trincar ou quebrar?</summary><ul>
+<li>Antes de cada uso, verifique se há trincas, rebarbas, pontas soltas ou partes quebradas.</li>
+<li>Se alguma parte quebrar ou soltar, pare de usar imediatamente e descarte com segurança.</li>
+<li>Peças quebradas podem ter bordas cortantes.</li>
+</ul></details><details><summary>Como limpar e guardar?</summary><ul>
+<li>Não deixe no sol, dentro do carro, perto do fogo, do fogão ou de outras fontes de calor: o plástico pode deformar.</li>
+<li>Não lavar na máquina de lavar louça nem no micro-ondas.</li>
+<li>Limpe apenas com pano levemente úmido e seque bem. Não use álcool, solventes ou produtos abrasivos.</li>
+</ul></details><details><summary>É um produto terapêutico ou médico?</summary><ul>
+<li>Produto de uso manual, sensorial e decorativo.</li>
+<li>Não é dispositivo médico e não substitui avaliação, tratamento ou acompanhamento profissional.</li>
+<li>Pessoas com alergia a plásticos devem evitar o contato. Em caso de irritação, interrompa o uso.</li>
+</ul></details></div>
+<p class="disc">Em caso de ingestão ou aspiração de qualquer parte, procure atendimento médico imediatamente.</p>
+</section>
+<section id="contato">
+<div class="cta">
+<h2>Gostou? Tem muito mais!</h2>
+
+<a class="btn" href="https://www.instagram.com/mango3doficial" target="_blank" rel="noopener">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg>
+@mango3doficial</a>
+</div>
+</section>
+</main>
+<footer class="wrap">Mango3D · AS Internacional Imports · CNPJ 51.860.376/0001-07 · Belo Horizonte – MG</footer>
+</body>
+</html>
